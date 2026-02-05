@@ -1,0 +1,197 @@
+
+:root {
+    --bg-gradient: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%); /* Soft Blue Cloud */
+    --accent-color: #92a8d1;
+    --primary-btn: #f7cac9; /* Pantone Rose Quartz */
+    --primary-btn-hover: #f7786b;
+    --text-dark: #555555;
+    --card-bg: rgba(255, 255, 255, 0.9);
+    --shadow: 0 10px 30px rgba(161, 196, 253, 0.4);
+    --font-main: 'Quicksand', sans-serif;
+}
+
+* { box-sizing: border-box; font-family: var(--font-main); }
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    background: var(--bg-gradient);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.card {
+    background: var(--card-bg);
+    padding: 40px;
+    border-radius: 30px; /* Super rounded corners */
+    width: 100%;
+    max-width: 420px;
+    box-shadow: var(--shadow);
+    text-align: center;
+    backdrop-filter: blur(10px); /* Frosted glass effect */
+    animation: popUp 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@keyframes popUp {
+    from { transform: scale(0.8); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+/* 🌸 4. LOGIN STYLING */
+.header-icon { font-size: 50px; margin-bottom: 10px; }
+.login-card h1 { color: var(--text-dark); margin: 0; font-size: 28px; font-weight: 700; }
+.login-card p { color: #888; margin-top: 5px; margin-bottom: 25px; }
+
+input {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 12px;
+    border: 2px solid #eee;
+    border-radius: 15px; /* Rounded inputs */
+    outline: none;
+    background: #fdfdfd;
+    transition: 0.3s;
+    font-size: 14px;
+}
+
+input:focus {
+    border-color: #a1c4fd;
+    background: white;
+}
+
+/* 🌸 5. BUTTONS */
+button { cursor: pointer; transition: 0.2s; border: none; font-weight: 700; font-size: 15px; }
+
+.btn-primary {
+    width: 100%;
+    padding: 15px;
+    border-radius: 15px;
+    background: #a1c4fd;
+    color: white;
+    margin-bottom: 10px;
+}
+.btn-primary:hover { background: #8ab6fc; transform: translateY(-2px); }
+
+.btn-secondary {
+    width: 100%;
+    padding: 15px;
+    border-radius: 15px;
+    background: white;
+    color: #a1c4fd;
+    border: 2px solid #a1c4fd;
+}
+.btn-secondary:hover { background: #f0f7ff; }
+
+.message { color: #f7786b; font-size: 13px; margin-top: 10px; min-height: 20px;}
+
+/* 🌸 6. APP DASHBOARD */
+.app-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+    text-align: left;
+}
+
+.user-info h2 { margin: 0; color: var(--text-dark); }
+.user-info span { font-size: 12px; color: #888; }
+
+.btn-logout {
+    background: #ffe0e0;
+    color: #f7786b;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.btn-logout:hover { background: #ffcaca; }
+
+/* 🌸 7. STATS BAR */
+.stats-bar {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+.stat {
+    flex: 1;
+    background: white;
+    padding: 10px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.03);
+}
+.stat span { display: block; font-size: 20px; font-weight: 700; color: #a1c4fd; }
+.stat small { font-size: 12px; color: #aaa; text-transform: uppercase; letter-spacing: 1px; }
+
+/* 🌸 8. ADD TASK ROW */
+.add-task-box {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 20px;
+}
+.add-task-box input { margin: 0; }
+.add-task-box select {
+    border: 2px solid #eee;
+    border-radius: 15px;
+    background: white;
+    color: #666;
+    padding: 0 10px;
+    cursor: pointer;
+    outline: none;
+}
+.btn-circle {
+    width: 50px;
+    background: #a1c4fd;
+    color: white;
+    border-radius: 15px;
+    flex-shrink: 0;
+}
+.btn-circle:hover { background: #8ab6fc; }
+
+/* 🌸 9. TASK LIST */
+ul { list-style: none; padding: 0; text-align: left; }
+
+li {
+    background: white;
+    margin-bottom: 10px;
+    padding: 15px;
+    border-radius: 18px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+    transition: 0.3s;
+}
+li:hover { transform: translateY(-2px); box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
+
+/* Checkbox */
+input[type="checkbox"] { width: 20px; height: 20px; margin: 0; accent-color: #a1c4fd; cursor: pointer; }
+
+/* Task Text & Badges */
+.task-details { flex: 1; }
+.task-title { font-weight: 600; color: #555; display: block;}
+.task-tag { font-size: 10px; padding: 3px 8px; border-radius: 8px; font-weight: 700; display: inline-block; margin-top: 4px; }
+
+/* Cute Tag Colors */
+.tag-High { background: #ffdde1; color: #ee9ca7; }   /* Soft Red */
+.tag-Medium { background: #fff5ba; color: #d4c26a; } /* Soft Yellow */
+.tag-Low { background: #e0f7fa; color: #4dd0e1; }    /* Soft Cyan */
+
+/* Actions */
+.btn-delete {
+    background: none;
+    color: #ddd;
+    font-size: 14px;
+}
+.btn-delete:hover { color: #f7786b; }
+
+/* Completed State */
+li.completed { opacity: 0.6; background: #f9f9f9; }
+li.completed .task-title { text-decoration: line-through; }
+
+/* Empty State */
+.empty-state { text-align: center; margin-top: 30px; color: #aaa; }
+.empty-icon { font-size: 40px; margin-bottom: 10px; display: block; }
